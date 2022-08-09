@@ -7,7 +7,7 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.54.tgz#de2a4be678bd4d0d1ffbb86e6de779cde5999028"
   integrity sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==
 
-"@hotwired/stimulus@^3.1.0":
+"@hotwired/stimulus@>= 3.0", "@hotwired/stimulus@^3.1.0", "stimulus@npm:@hotwired/stimulus":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
   integrity sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg==
@@ -46,7 +46,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@rails/actioncable@^7.0":
+"@rails/actioncable@>= 6.0", "@rails/actioncable@^7.0":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.3.tgz#71f08e958883af64f6a20489318b5e95d2c6dc5b"
   integrity sha512-Iefl21FZD+ck1di6xSHMYzSzRiNJTHV4NrAzCfDfqc/wPz4xncrP8f2/fJ+2jzwKIaDn76UVMsALh7R5OzsF8Q==
@@ -123,6 +123,13 @@ browserslist@^4.21.3:
     electron-to-chromium "^1.4.202"
     node-releases "^2.0.6"
     update-browserslist-db "^1.0.5"
+
+"cable_ready@>= 5.0.0-pre9":
+  version "5.0.0-pre9"
+  resolved "https://registry.yarnpkg.com/cable_ready/-/cable_ready-5.0.0-pre9.tgz#9c082b796f7b7add7965ce637a8d8717726be5ab"
+  integrity sha512-m7XggG+LRPFLsbH78G603F3AAYpkv+VfGCouN6RrP20Mgz9H0+xr7v2DN2F1CeJBBAliYPKcAt/48uTGjSrBaA==
+  dependencies:
+    morphdom "^2.6.1"
 
 camelcase-css@^2.0.1:
   version "2.0.1"
@@ -440,6 +447,18 @@ minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+"morphdom@>=2.6.0 <3.0.0", morphdom@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.6.1.tgz#e868e24f989fa3183004b159aed643e628b4306e"
+  integrity sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==
+
+mrujs@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/mrujs/-/mrujs-0.10.1.tgz#63f64a37fc6dd9ce14a7296a09a5efaac54a322f"
+  integrity sha512-VRilxqfFi0PAEsaNHUQvtf3QKpU7p9xXA97HyksIc4Jb13Bap/9d212dUddC31TnEGby7GymWU+EKRiZIcOJmQ==
+  dependencies:
+    morphdom ">=2.6.0 <3.0.0"
+
 nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
@@ -587,6 +606,15 @@ source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
+stimulus_reflex@3.5.0-pre9:
+  version "3.5.0-pre9"
+  resolved "https://registry.yarnpkg.com/stimulus_reflex/-/stimulus_reflex-3.5.0-pre9.tgz#e99eaf11e9e7476df10cd8f5c557d368f54446b3"
+  integrity sha512-ZhGUuJaKaWhHU5eGnZQ3pgnv0/pJ4dtNABDtMZRAHNm3ngsHY5dpR/H801a1ozD6J5rpadONvhhBcPjPY/x6NQ==
+  dependencies:
+    "@hotwired/stimulus" ">= 3.0"
+    "@rails/actioncable" ">= 6.0"
+    cable_ready ">= 5.0.0-pre9"
 
 supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
