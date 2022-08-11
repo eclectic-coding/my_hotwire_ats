@@ -15,6 +15,7 @@ gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "stimulus_reflex", "= 3.5.0.pre9"
 gem 'devise', branch: 'rails_7', github: 'DavidColby/devise'
+gem 'inline_svg'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
