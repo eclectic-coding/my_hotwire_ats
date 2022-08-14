@@ -1,5 +1,6 @@
 class Applicant < ApplicationRecord
   belongs_to :job
+  has_one_attached :resume
 
   validates_presence_of :first_name, :last_name, :email
 
@@ -15,7 +16,7 @@ class Applicant < ApplicationRecord
     inactive: 'inactive',
   }
 
-  def attribute_names
+  def name
     [first_name, last_name].join(' ')
   end
 end

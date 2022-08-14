@@ -65,6 +65,13 @@
   dependencies:
     spark-md5 "^3.0.1"
 
+"@rails/activestorage@^7.0.3-1":
+  version "7.0.3-1"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.3-1.tgz#1b17d830fe065b2f73cc7aaea4dd1a4177bee6cf"
+  integrity sha512-8tDzsfVyJtkq/nxRT8dHuyYaZMfWQy8Qkm/InIBmf/e3vZ3kyLMF7yJ88qZf6ghbNgjHbjrJdh6wNoXnJjvKjw==
+  dependencies:
+    spark-md5 "^3.0.1"
+
 "@tailwindcss/forms@^0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.2.tgz#4ef45f9916dcb37838cbe7fecdcc4ba7a7c2ab59"
