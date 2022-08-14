@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :applicants
+  resources :applicants do
+    patch :change_stage, on: :member
+  end
   resources :jobs
   devise_for :users,
              path: '',
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
                sign_up: 'sign_up',
                sign_out: 'signout'
              }
-  # Snip
 
   authenticated :user do
     root to: 'dashboard#show', as: :user_root
