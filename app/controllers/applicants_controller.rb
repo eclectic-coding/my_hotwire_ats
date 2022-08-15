@@ -2,6 +2,7 @@ class ApplicantsController < ApplicationController
   include Filterable
   before_action :set_applicant, only: %i[ show edit update destroy change_stage ]
   before_action :authenticate_user!
+  before_action :turbo_frame_request_variant
 
   def change_stage
     @applicant.update(applicant_params)
@@ -83,5 +84,9 @@ class ApplicantsController < ApplicationController
 
   def search_params
     params.permit(:query, :job, :sort)
+  end
+
+  def turbo_frame_request_variant
+    request.variant = :turbo_frame if turbo_frame_request?
   end
 end
