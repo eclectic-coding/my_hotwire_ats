@@ -8,17 +8,18 @@
 <div class="shadow p-4 text-gray-700">
   <div class="flex justify-between mb-6">
     <div class="space-y-2">
-      <h3 class="text-xl font-bold">Applicant Info</h3>
+      <h3 class="text-xl font-bold">Applicant info</h3>
       <p><%= mail_to @applicant.email %></p>
       <p><%= phone_to @applicant.phone %></p>
     </div>
     <div class="space-y-2">
-      <h3 class="text-xl font-bold">Application Details</h3>
+      <h3 class="text-xl font-bold">Application details</h3>
       <p>Applied for <%= @applicant.job.title %></p>
       <p>Applied on <%= l(@applicant.created_at.to_date, format: :long) %></p>
     </div>
     <div class="space-y-2">
-      <!-- applicant actions go here -->
+      <%= link_to "Send email", new_applicant_email_path(@applicant), class: "btn-primary-outline",
+                  data: { action: "click->slideover#open", remote: true } %>
     </div>
   </div>
   <% if @applicant.resume.attached? %>
