@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :applicants do
     patch :change_stage, on: :member
     resources :emails, only: %i[index new create show]
+    resources :email_replies, only: :new
     get :resume, action: :show, controller: 'resumes'
   end
 
