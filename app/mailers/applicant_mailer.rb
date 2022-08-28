@@ -1,5 +1,4 @@
 class ApplicantMailer < ApplicationMailer
-
   def contact(email:)
     @email = email
     @applicant = @email.applicant
@@ -7,9 +6,8 @@ class ApplicantMailer < ApplicationMailer
 
     mail(
       to: @applicant.email,
-      from: @user.email,
+      from: "reply-#{@user.email_alias}@eclecticcoding.com",
       subject: @email.subject
     )
   end
-
 end
