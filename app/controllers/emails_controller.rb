@@ -6,7 +6,7 @@ class EmailsController < ApplicationController
     @email = Email.new
     html = render_to_string(partial: 'form', locals: { email: @email, applicant: @applicant })
     render operations: cable_car
-                         .inner_html('#slideover-content', html, html)
+                         .inner_html('#slideover-content', html: html)
                          .text_content('#slideover-header', text: "Email #{@applicant.name}")
   end
 
@@ -18,12 +18,12 @@ class EmailsController < ApplicationController
     if @email.save
       html = render_to_string(partial: 'shared/flash', locals: { level: :success, content: 'Email sent!' })
       render operations: cable_car
-                           .inner_html('#flash-container', html, html)
+                           .inner_html('#flash-container', html: html)
                            .dispatch_event(name: 'submit:success')
     else
-      html = render_to_string(partial: 'form', locals: { email: @email, applicant: @applicant })
+      html = render_to_string(partial: 'form', locals: { applicant: @applicant, email: @email })
       render operations: cable_car
-                           .inner_html('#email-form', html, html), status: :unprocessable_entity
+                           .inner_html('#email-form', html: html), status: :unprocessable_entity
     end
   end
 
@@ -36,5 +36,4 @@ class EmailsController < ApplicationController
   def email_params
     params.require(:email).permit(:subject, :body)
   end
-
 end
